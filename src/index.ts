@@ -1,50 +1,47 @@
 import { getTableConfig, PgTable, PgColumn } from "drizzle-orm/pg-core";
-import { t } from "elysia";
+import { t, type TSchema } from "elysia";
 
 interface params {
-    excludePrimaryKey?: boolean,
-    exludedColumns?: Array<String>
+    excludePrimaryKey?: boolean;
+    excludedColumns?: Array<string>;
+}
+
+const defaultParams: params = {
+    excludePrimaryKey: true,
+    excludedColumns: []
 };
 
-export const parseDrizzleModel = (table: PgTable, params?: params) => {
+export const parseDrizzleModel = (table: PgTable, params: params = defaultParams): TSchema => {
     const { columns } = getTableConfig(table);
+    if (columns === undefined) return t.Object({});
 
-    if (columns === undefined) return t.Object({})
+    const properties: { [key: string]: TSchema } = {};
 
-    let properties: { [key: string]: any } = {};
-    columns.forEach((element: PgColumn) => {
-        if (
-            element.primary && params?.excludePrimaryKey ||
-            params?.exludedColumns !== undefined && params?.exludedColumns.includes(element.name)
-        ) {
-            return;
+    for (const element of columns) {
+        if (params.excludePrimaryKey && element.primary) {
+            continue;
         }
-        properties[element.name] = parseTypes(element)
-    })
+        if (!params.excludedColumns?.includes(element.name)) {
+            properties[element.name] = parseTypes(element);
+        }
+    }
 
-    let elysiaSchema = t.Object(properties);
-    return elysiaSchema;
-}
+    return t.Object(properties);
+};
 
 function parseTypes(element: PgColumn) {
     switch (element.dataType) {
-        case 'string':
+        case "string":
             return t.String();
-            break;
-        case 'number':
+        case "number":
             return t.Number();
-            break;
-        case 'boolean':
+        case "boolean":
             return t.Boolean();
-            break;
-        case 'json':
+        case "json":
             return t.Object({});
-            break;
-        case 'date':
+        case "date":
             return t.Date({});
-            break;
         default:
             return t.Never();
-            break;
     }
 }

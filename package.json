@@ -1,7 +1,7 @@
 {
   "name": "elysia-drizzle-schema",
   "version": "1.0.0",
-  "description": "Elysia.js plugin that helps to use Drizzle ORM] schema inside elysia swagger",
+  "description": "Elysia.js plugin that helps to use Drizzle ORM schema inside elysia swagger",
   "scripts": {
     "dev": "bun run --watch ./src/index.ts"
   },
@@ -31,5 +31,8 @@
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.29.3"
   }
 }
