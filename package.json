@@ -8,9 +8,9 @@
   "author": "Edsol <contact@edsol.dev>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Edsol/elysia-drizzle-schema.git"
   },
-  "bugs": "https://github.com/wobsoriano/elysia-clerk/issues",
+  "bugs": "https://github.com/Edsol/elysia-drizzle-schema/issues",
   "keywords": [
     "bun",
     "elysia",
