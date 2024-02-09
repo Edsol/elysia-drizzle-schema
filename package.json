@@ -1,0 +1,35 @@
+{
+  "name": "elysia-drizzle-schema",
+  "version": "1.0.0",
+  "description": "Elysia.js plugin that helps to use Drizzle ORM] schema inside elysia swagger",
+  "scripts": {
+    "dev": "bun run --watch ./src/index.ts"
+  },
+  "author": "Edsol <contact@edsol.dev>",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "bugs": "https://github.com/wobsoriano/elysia-clerk/issues",
+  "keywords": [
+    "bun",
+    "elysia",
+    "elysia.js",
+    "drizzle",
+    "drizzle-orm",
+    "swagger"
+  ],
+  "license": "MIT",
+  "module": "/src/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@biomejs/biome": "1.5.3",
+    "@types/bun": "latest",
+    "bun": "^1.0.26",
+    "elysia": "^0.8.16",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
