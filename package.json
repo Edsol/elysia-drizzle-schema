@@ -3,14 +3,15 @@
   "version": "1.0.0",
   "description": "Elysia.js plugin that helps to use Drizzle ORM schema inside elysia swagger",
   "scripts": {
-    "dev": "bun run --watch ./src/index.ts"
+    "dev": "bun run --watch ./src/index.ts",
+    "build": "tsc"
   },
   "author": "Edsol <contact@edsol.dev>",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Edsol/elysia-drizzle-schema.git"
   },
-  "bugs": "https://github.com/wobsoriano/elysia-clerk/issues",
+  "bugs": "https://github.com/Edsol/elysia-drizzle-schema/issues",
   "keywords": [
     "bun",
     "elysia",
