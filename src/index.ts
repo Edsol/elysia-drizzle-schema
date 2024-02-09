@@ -1,17 +1,17 @@
 import { getTableConfig, PgTable, PgColumn } from "drizzle-orm/pg-core";
 import { t, type TSchema } from "elysia";
 
-interface params {
+export interface optionsParams {
     excludePrimaryKey?: boolean;
     excludedColumns?: Array<string>;
 }
 
-const defaultParams: params = {
+const defaultParams: optionsParams = {
     excludePrimaryKey: true,
     excludedColumns: []
 };
 
-export const parseDrizzleModel = (table: PgTable, params: params = defaultParams): TSchema => {
+export const parseDrizzleModel = (table: PgTable, params: optionsParams = defaultParams): TSchema => {
     const { columns } = getTableConfig(table);
     if (columns === undefined) return t.Object({});
 
