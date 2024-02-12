@@ -30,16 +30,16 @@ export const parseDrizzleModel = (table: PgTable, params: optionsParams = defaul
 };
 
 function parseTypes(element: PgColumn) {
-    switch (element.dataType) {
-        case "string":
+    switch (element.columnType) {
+        case "PgText":
             return t.String();
-        case "number":
+        case "PgNumeric":
             return t.Number();
-        case "boolean":
+        case "PgBoolean":
             return t.Boolean();
-        case "json":
+        case "PgJson":
             return t.Object({});
-        case "date":
+        case "PgDate":
             return t.Date({});
         default:
             return t.Never();
