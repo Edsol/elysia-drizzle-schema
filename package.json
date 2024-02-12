@@ -1,5 +1,5 @@
 {
-  "name": "elysia-drizzle-schema",
+  "name": "@edsol/elysia-drizzle-schema",
   "version": "1.0.8",
   "description": "Elysia.js plugin that helps to use Drizzle ORM schema inside elysia swagger",
   "scripts": {
