@@ -6,6 +6,11 @@
     "dev": "bun run --watch ./src/index.ts",
     "build": "bun build ./src/index.ts --outdir ./dist"
   },
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "author": "Edsol <contact@edsol.dev>",
   "repository": {
     "type": "git",
@@ -21,7 +26,6 @@
     "swagger"
   ],
   "license": "MIT",
-  "module": "/src/index.ts",
   "type": "module",
   "devDependencies": {
     "@biomejs/biome": "1.5.3",
@@ -34,6 +38,7 @@
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "bun-types": "^1.0.26",
     "drizzle-orm": "^0.29.3"
   }
 }
