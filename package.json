@@ -4,10 +4,17 @@
   "description": "Elysia.js plugin that helps to use Drizzle ORM schema inside elysia swagger",
   "scripts": {
     "dev": "bun run --watch ./src/index.ts",
-    "build": "tsc --project tsconfig.esm.json"
+    "build": "rimraf dist && tsc --project tsconfig.esm.json && tsc --project tsconfig.cjs.json"
   },
-  "main": "dist/index.ts",
-  "types": "dist/index.d.ts",
+  "main": "./dist/index.ts",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    "bun": "./dist/index.js",
+    "node": "./dist/cjs/index.js",
+    "require": "./dist/cjs/index.js",
+    "import": "./dist/index.js",
+    "default": "./dist/index.js"
+  },
   "files": [
     "dist"
   ],
@@ -39,6 +46,7 @@
   },
   "dependencies": {
     "bun-types": "^1.0.26",
-    "drizzle-orm": "^0.29.3"
+    "drizzle-orm": "^0.29.3",
+    "rimraf": "^5.0.5"
   }
 }

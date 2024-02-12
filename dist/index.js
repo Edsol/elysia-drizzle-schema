@@ -35,3 +35,4 @@ function parseTypes(element) {
             return t.Never();
     }
 }
+export default parseDrizzleModel;
