@@ -45,3 +45,5 @@ function parseTypes(element: PgColumn) {
             return t.Never();
     }
 }
+
+export default parseDrizzleModel;
