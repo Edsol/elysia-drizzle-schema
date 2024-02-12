@@ -10,6 +10,16 @@ Simple [Elysia.js](https://elysiajs.com) plugin that helps to use [Drizzle ORM](
 - Drizzle ORM
 - Elysia.js
 
+## Install
+
+```bash
+bun i elysia-drizzle-schema
+```
+or 
+```bash
+npm i elysia-drizzle-schema
+```
+
 ## Usage
 
 ```ts
