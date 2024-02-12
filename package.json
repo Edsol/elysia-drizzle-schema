@@ -1,6 +1,6 @@
 {
   "name": "elysia-drizzle-schema",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Elysia.js plugin that helps to use Drizzle ORM schema inside elysia swagger",
   "scripts": {
     "dev": "bun run --watch ./src/index.ts",
